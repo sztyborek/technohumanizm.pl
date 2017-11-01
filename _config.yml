@@ -1,0 +1,19 @@
+
+title: Technohumanizm &mdash; o ludziach w świecie technologii
+email: kontakt@technohumanizm.pl
+description: O ludziach w świecie technologii
+baseurl: ""
+url: "https://technohumanizm.pl"
+date_format: "%d/%m/%Y"
+twitter_username: technohumanizm
+facebook_username: technohumanizm
+disqus_shortname: sztyborek
+
+# Build settings
+markdown: kramdown
+paginate: 6
+sass:
+  compressed: true
+plugins_dir: 
+  - jekyll-paginate
+gems: [jekyll-paginate]

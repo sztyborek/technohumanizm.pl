@@ -1,0 +1,112 @@
+<section class="sidebar">
+  <aside class="sidebar__section sidebar__about-me">
+    <h3 class="section-heading">O mnie</h3>
+    <img src="/images/marta.jpg" alt="" class="sidebar__author-pic">
+    <p>Deep v irony cred, tousled salvia helvetica farm-to-table readymade disrupt. Health goth art party ethical dreamcatcher trust fund food truck. Lumbersexual sriracha intelligentsia, actually tote bag kitsch freegan fanny pack brunch hot chicken lomo iPhone put a bird on it.</p>
+  </aside>
+
+  <aside class="sidebar__section">
+    <h3 class="section-heading">Obserwuj</h3>
+    {% include social-icons.html %}
+  </aside>
+
+  <aside class="sidebar__section">
+    <h3 class="section-heading">Archiwum</h3>
+    {% for post in site.posts  %}
+      {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+      {% capture this_month %}
+        {% assign m = post.date | date: "%m" %}
+        {% case m %}
+          {% when '1' %}Styczeń
+          {% when '2' %}Luty
+          {% when '3' %}Marzec
+          {% when '4' %}Kwiecień
+          {% when '5' %}Maj
+          {% when '6' %}Czerwiec
+          {% when '7' %}Lipiec
+          {% when '8' %}Sierpień
+          {% when '9' %}Wrzesień
+          {% when '10' %}Październik
+          {% when '11' %}Listopad
+          {% when '12' %}Grudzień
+        {% endcase %}
+      {% endcapture %}
+      {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+      {% capture next_month %}
+        {% assign m = post.previous.date | date: "%m" %}
+        {% case m %}
+          {% when '1' %}Styczeń
+          {% when '2' %}Luty
+          {% when '3' %}Marzec
+          {% when '4' %}Kwiecień
+          {% when '5' %}Maj
+          {% when '6' %}Czerwiec
+          {% when '7' %}Lipiec
+          {% when '8' %}Sierpień
+          {% when '9' %}Wrzesień
+          {% when '10' %}Październik
+          {% when '11' %}Listopad
+          {% when '12' %}Grudzień
+        {% endcase %}
+      {% endcapture %}
+
+      {% if forloop.first %}
+        <label id="{{ this_month }}-{{ this_year }}" class="collapsible__label">
+          <input type="checkbox" for="{{ this_month }}-{{ this_year }}" class="collapsible__checkbox">
+          <span class="collapsible__title">{{ this_month }} {{ this_year }}</span>
+        </label>
+        <ul class="collapsible__content">
+      {% endif %}
+
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+
+      {% if forloop.last %}
+        </ul>
+      {% else %}
+        {% if this_year != next_year %}
+          </ul>
+          <label class="collapsible__label" id="{{ this_month }}-{{ this_year }}">
+            <input type="checkbox" for="{{ this_month }}-{{ this_year }}" class="collapsible__checkbox">
+            <span class="collapsible__title">{{ next_month }} {{ next_year }}</span>
+          </label>
+          <ul class="collapsible__content">
+        {% else %}    
+          {% if this_month != next_month %}
+            </ul>
+            <label class="collapsible__label" id="{{ this_month }}-{{ this_year }}">
+              <input type="checkbox" for="{{ this_month }}-{{ this_year }}" class="collapsible__checkbox">
+              <span class="collapsible__title">{{ next_month }} {{ next_year }}</span>
+            </label>
+            <ul class="collapsible__content">
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </aside>
+
+  <aside class="sidebar__section">
+    <h3 class="section-heading">Kategorie</h3>
+    {% for tag in site.categories %}
+      <label class="collapsible__label" id="{{ tag[0] }}" tabindex="1">
+        <input type="checkbox" for="{{ tag[0] }}" class="collapsible__checkbox">
+        <span class="collapsible__title">{{ tag[0] | capitalize }}</span>
+      </label>
+      <ul class="collapsible__content">
+        {% assign pages_list = tag[1] %}
+        {% for post in pages_list %}
+          {% if post.title != null %}
+          {% if group == null or group == post.group %}
+            <li>
+              <a href="{{ site.url }}{{ post.url }}">
+                {{ post.title }}
+              </a>
+            </li>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+        {% assign pages_list = nil %}
+        {% assign group = nil %}
+    {% endfor %}
+  </aside>
+</section>

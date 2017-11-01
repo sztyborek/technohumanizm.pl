@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<h2 class="section-heading">
+  {{ page.categories[0]}}
+</h2>
+<header>
+  <p class="post__meta">
+    Opublikowany {{ page.date | date: site.date_format }}
+    &mdash; Skomentuj
+  </p>
+  <h1 class="post__title">{{ page.title }}</h1>
+  <img src="{{ page.image | prepend: site.baseurl }}" alt="">
+</header>
+
+<div class="post__content">
+  {{ content }}
+
+  <div class="pagination pagination--post">
+    {% if page.previous.url %}
+      <a class="pagination__prev" href="{{ page.previous.url }}">&larr; {{page.previous.title}}</a>
+    {% endif %}
+    {% if page.next.url %}
+      <a class="pagination__next" href="{{ page.next.url }}">{{page.next.title}} &rarr;</a>
+    {% endif %}
+  </div>
+
+  {% if site.show_sharing_icons %}
+    {% include share_buttons.html %}
+  {% endif %}
+
+  {% if site.show_post_footers %}
+    {% include post_footer.html %}
+  {% endif %}
+</div>
+
+{% if site.disqus_shortname %}
+  <div class="post__comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = '{{ site.disqus_shortname }}';
+      var disqus_identifier = '{{ page.id }}';
+      var disqus_title      = {{ page.title | jsonify }};
+
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+{% endif %}
+
+{% if site.show_related_posts %}
+  <h3 class="related-post-title">{{ site.text.post.related_posts }}</h3>
+  {% for post in site.related_posts %}
+    <div class="post ml2">
+      <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+        <h4 class="post-title">{{ post.title }}</h4>
+        <p class="post-summary">{{ post.summary }}</p>
+      </a>
+    </div>
+  {% endfor %}
+{% endif %}

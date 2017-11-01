@@ -1,0 +1,16 @@
+---
+# The scss file which include files from _sass/
+---
+@charset "UTF-8";
+
+@import 'base';
+@import 'blockquotes';
+@import 'header';
+@import 'footer';
+@import 'sidebar';
+@import 'layout';
+@import 'post-list';
+@import 'post';
+@import 'social-icons';
+@import 'pagination';
+@import 'collapsible';

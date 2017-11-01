@@ -1,0 +1,50 @@
+.collapsible__label {
+  font-weight: 300;
+  font-size: .75rem;
+  cursor: pointer;
+  display: block;
+  transition: background .2s ease-in;
+
+  &:focus {
+    outline: none;
+    background: #92ffbf;
+  }
+}
+
+.collapsible__title {
+  &::before {
+    content: '\25BA';
+    font-size: .65rem;
+    line-height: .75rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+}
+
+.collapsible__checkbox {
+  position: absolute;
+  left: -9999px;
+
+  &:checked {
+    & + .collapsible__title::before {
+      content: '\25BC';
+    }
+  }
+}
+
+.collapsible__content {
+  list-style: none;
+  padding-left: 1.25rem;
+  font-size: .75rem;
+  margin: 1rem 0;
+  // display: none;
+
+  li {
+    margin-bottom: .5rem;
+  }
+
+  a {
+    background-image: none;
+  }
+}

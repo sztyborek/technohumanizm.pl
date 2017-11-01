@@ -1,0 +1,43 @@
+.pagination {
+  display: flex;
+  margin-top: -3rem;
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pagination--post {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+  display: flex;
+
+  @media screen and (min-width: 1200px) {
+    margin-left: -3rem;
+  }
+
+  a {
+    display: inline-block;
+    vertical-align: top;
+    background-image: none;
+    max-width: 50%;
+  }
+
+  .pagination__next {
+    text-align: right;
+  }
+}
+
+.pagination__next {
+  margin-left: auto;
+}
+
+.pagination .disabled {
+  color: #ccc;
+}
+
+.pagination a:hover, 
+.pagination a:focus {
+  cursor: pointer;
+}

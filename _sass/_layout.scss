@@ -1,0 +1,28 @@
+.container {
+  padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 992px) {
+    padding: 0 25px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content__main {
+    flex: 1 0 70%;
+  }
+}

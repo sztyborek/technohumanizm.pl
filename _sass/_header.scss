@@ -1,0 +1,50 @@
+.header {
+  padding: 2.25rem 0 .5rem 0;
+
+  a {
+    background-image: none;
+  }
+}
+
+.header__tagline {
+  display: inline-block;
+  padding: 10px 0;
+}
+
+.header__menu {
+  text-align: right;
+  margin-bottom: 0;
+  margin-top: 1rem;
+    
+  li {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .6rem;
+    margin-left: 1.25rem;
+  }
+}
+
+.header__site-title {
+  font: normal 1rem/1 'Amiri', cursive;
+  margin: 0;
+  
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 2.25rem 0 5rem 0;
+  }
+
+  .header nav {
+    display: flex;
+  }
+
+  .header__menu {
+    margin: 0 0 0 auto;
+  }
+}

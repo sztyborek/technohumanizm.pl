@@ -1,0 +1,54 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 3rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    flex: 1 0 30%;
+    padding-left: 50px;
+    margin-top: 0;
+  }
+  
+  @media screen and (min-width: 1200px) {
+    padding-left: 8%;
+  }
+}
+
+.sidebar__section {
+  margin-bottom: 2rem;
+}
+
+.sidebar__section p {
+  font-size: .75rem;
+}
+
+.sidebar__about-me {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    order: 3;
+  }
+
+  @media screen and (min-width: 1024px) {
+    order: 0;
+  }
+}
+
+.sidebar__author-pic {
+  @media screen and (min-width: 768px) {
+    margin: 0 1.5rem 0 0;
+    border-radius: 100%;
+    width: 200px;
+    float: left;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: 0 0 1.5rem 0;
+    width: 100%;
+    float: none;
+  }
+}

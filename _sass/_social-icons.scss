@@ -1,0 +1,63 @@
+.social-icons {
+  text-align: center;
+  font-size: .75rem;
+
+  .fa {
+    line-height: 1.75rem;
+  }
+}
+
+.social-icons a {
+  cursor: pointer;
+  background: #333;
+  color: white;
+  text-shadow: none;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.75rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  border-radius: 100%;
+  margin: 0 .25rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 100%;
+    transition: .1s ease-out;
+    transition-property: top, right, bottom, left;
+    will-change: top, right, bottom, left;
+  }
+
+  &::before {
+    background: #92ffbf;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    bottom: -3px;
+    left: -3px;
+  }
+
+  &::after {
+    background: #ff54c1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -2;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    top: -3px;
+    right: -3px;
+  }
+}

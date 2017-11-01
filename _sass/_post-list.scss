@@ -1,0 +1,43 @@
+.post-list {
+  margin: 0;
+}
+
+.post-list__header {
+  padding-right: 2rem;
+}
+
+.post-list__item {
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.post-list__item-title {
+  margin: 1.25rem 0 0 0;
+  font-size: 2.5rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .post-list__summary,
+  .post-list__item-meta {
+    padding-left: 3rem;
+  }
+}
+
+.post-list__summary {
+  font-size: .9rem;
+}
+
+.post-list__item-meta {
+  margin: 2rem 0 1rem 0;
+  font: normal 1rem/1 'Amiri', cursive;
+}
+
+.post-list__link {
+  text-shadow: none;
+  background: none;
+}
+
+.post-list__read-more {
+  font-weight: 700;
+}
