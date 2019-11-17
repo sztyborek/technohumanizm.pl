@@ -1,13 +1,13 @@
-
-title: Technohumanizm &mdash; o ludziach w świecie technologii
+title: Technohumanizm &mdash; o ludziach, technologii i życiu w zgodzie ze sobą
 email: kontakt@technohumanizm.pl
-description: O ludziach w świecie technologii
+description: Technohumanizm &mdash; o ludziach, technologii i życiu w zgodzie ze sobą
 baseurl: ""
 url: "https://technohumanizm.pl"
 date_format: "%d/%m/%Y"
-twitter_username: technohumanizm
+instagram_username: technohumanizm
 facebook_username: technohumanizm
 disqus_shortname: martasztybor
+google_analytics: UA-152704621-1
 
 # Build settings
 markdown: kramdown
